@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Conversation You Can't Have</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Setup Form -->
+        <div id="setup-screen" class="screen active">
+            <div class="setup-card">
+                <h1>The Conversation You Can't Have</h1>
+                <p class="subtitle">A friend, an ex, or someone who is no longer in your life. It's time to have the conversation you can't have.</p>
+                <form id="setup-form">
+                    <div class="form-group">
+                        <label for="user-name">Your Name</label>
+                        <input type="text" id="user-name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="person-name">Their Name</label>
+                        <input type="text" id="person-name" required placeholder="Enter their name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="relationship">Relationship</label>
+                        <select id="relationship" required>
+                            <option value="">Select relationship</option>
+                            <option value="ex-partner">Ex-Partner</option>
+                            <option value="former-friend">Former Friend</option>
+                            <option value="family-member">Family Member</option>
+                            <option value="colleague">Colleague</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message-length">Message Length</label>
+                        <select id="message-length" required>
+                            <option value="short">Short (1-2 sentences)</option>
+                            <option value="medium" selected>Medium (2-4 sentences)</option>
+                            <option value="long">Long (4+ sentences)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tone">Tone</label>
+                        <select id="tone" required>
+                            <option value="warm">Warm & Friendly</option>
+                            <option value="neutral" selected>Neutral</option>
+                            <option value="distant">Distant</option>
+                            <option value="emotional">Emotional</option>
+                            <option value="humorous">Humorous</option>
+                            <option value="apologetic">Apologetic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="conversation-goal">What do you need from this conversation?</label>
+                        <select id="conversation-goal" required>
+                            <option value="closure">Closure</option>
+                            <option value="clarity">Clarity</option>
+                            <option value="reconnection">Reconnection</option>
+                            <option value="humor">Humor & Lightness</option>
+                            <option value="apology">Apology</option>
+                            <option value="understanding">Understanding</option>
+                            <option value="forgiveness">Forgiveness</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="persona-brief">Persona Brief (Optional)</label>
+                        <textarea id="persona-brief" rows="4" placeholder="Describe the person, and your relationship to them."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Start Conversation</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Chat Interface -->
+        <div id="chat-screen" class="screen">
+            <div class="chat-header">
+                <button id="back-btn" class="back-button">← Back</button>
+                <div class="contact-info">
+                    <h2 id="contact-name"></h2>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+            
+            <div id="messages-container" class="messages-container">
+                <!-- Messages will be inserted here -->
+            </div>
+            
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Message..." autocomplete="off">
+                <button id="send-btn" class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
